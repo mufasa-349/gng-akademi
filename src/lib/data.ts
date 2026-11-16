@@ -23,6 +23,7 @@ export const contact = {
 export const nav = [
   { href: "#sinavlar", label: "Sınavlar" },
   { href: "#videolar", label: "Videolar" },
+  { href: "#yorumlar", label: "Yorumlar" },
   { href: "#yontem", label: "Yöntem" },
   { href: "#platform", label: "Platform" },
   { href: "#sss", label: "SSS" },
@@ -81,6 +82,21 @@ export const exams = [
 
 export const manifesto =
   "Matematik ezberlenecek bir formül yığını değil; doğru sırayla kurulan bir düşünme biçimi. GNG Akademi'de her konu temelden başlar, her soru tahtada adım adım çözülür ve her öğrenci kendi hızında ilerler."; // draft
+
+// Veli / öğrenci geri dönüşleri (gerçek mesajlar, isimsiz paylaşım izniyle).
+// result: mesajın kendisinde geçen sonuç; kartta rozet olarak görünür.
+export const reviews: { type: "Veli" | "Öğrenci"; name: string; exam: string; text: string; result?: string }[] = [
+  { type: "Veli", name: "Elif'in annesi", exam: "LGS · 8. sınıf", result: "6-7 → 15-16 net", text: "Yusuf hocam sayesinde Elif matematikten artık eskisi kadar çekinmiyor. Denemelerde 6-7 netlerden 15-16 netlere çıktı, özellikle problem sorularında çok fark etti. Emeğiniz için teşekkür ederiz." },
+  { type: "Öğrenci", name: "Ahmet K.", exam: "YKS · AYT", text: "AYT matematikte özellikle limit ve türev kısmında çok zorlanıyordum. Yusuf hocam konuyu ezberletmek yerine mantığını anlattığı için soruları kendim çözmeye başladım. Netlerimde ciddi bir artış oldu." },
+  { type: "Veli", name: "Mert'in babası", exam: "YKS · TYT", text: "Mert matematiği yapabileceğine hiç inanmıyordu. Yusuf hocayla derslere başladıktan sonra özellikle temel konuları toparladı ve denemelerde netleri düzenli şekilde yükselmeye başladı. Çok memnun kaldık hocam." },
+  { type: "Öğrenci", name: "Burak T.", exam: "YKS · TYT", text: "TYT matematikte süre yetiştiremiyordum. Yusuf hocam sadece konu anlatmadı, soruyu nasıl daha hızlı okuyup çözebileceğimi de gösterdi. Denemelerde matematiğe ayırdığım süre ciddi şekilde azaldı." },
+  { type: "Veli", name: "Zeynep'in annesi", exam: "LGS · 8. sınıf", result: "~8 → 14-15 net", text: "Zeynep matematik sorusu görünce direkt geçiyordu, şimdi önce kendisi çözmeye çalışıyor. Denemelerde 8 net civarından 14-15 netlere kadar çıktı. Yusuf hocamın ilgisinden ve takibinden çok memnunuz." },
+  { type: "Veli", name: "Ece'nin babası", exam: "YKS · TYT / AYT", text: "Ece'nin matematik temeli çok zayıftı ve ders çalışmak istemiyordu. Yusuf hocayla başladıktan sonra düzenli çalışmaya alıştı ve özellikle TYT matematikte kendine güveni geldi. Takibi gerçekten çok iyi." },
+  { type: "Öğrenci", name: "Can A.", exam: "KPSS · Genel Yetenek", text: "KPSS matematikte uzun süredir netlerim belli bir seviyede kalmıştı. Yusuf hocam eksiklerimi tek tek belirleyip ona göre ilerledi. Özellikle problem sorularında artık çok daha rahatım." },
+  { type: "Veli", name: "Deniz'in annesi", exam: "LGS · 8. sınıf", text: "Derslerden sonra Deniz'in ‘Ben matematik yapamıyorum’ demeyi bıraktığını fark ettik. Önceden yanlış yaptığı soruları görmek bile istemiyordu, şimdi nerede hata yaptığını anlamaya çalışıyor. Yusuf hocama teşekkür ederiz." },
+  { type: "Öğrenci", name: "Emre Y.", exam: "YKS · AYT", text: "Yusuf hocamın en sevdiğim tarafı anlamadığım yerde konuyu geçmemesi. Aynı soruyu farklı yöntemlerle gösteriyor. AYT matematikte özellikle zorlandığım konular artık gözümde büyümüyor." },
+  { type: "Veli", name: "İrem'in annesi", exam: "LGS · 8. sınıf", text: "İrem'in matematik netleri bir türlü yükselmiyordu. Yusuf hocayla derslere başladıktan sonra eksiklerini daha net görmeye başladık ve denemelerde yavaş yavaş yükseliş oldu. Hem ders anlatımı hem iletişimi çok iyi." },
+];
 
 export const featuredVideo = {
   id: "MpX9vr8sFAc",

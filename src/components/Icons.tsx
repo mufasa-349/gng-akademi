@@ -32,6 +32,14 @@ export function SocialIcon({ id }: { id: string }) {
   );
 }
 
+export function ChatTicks() {
+  return (
+    <svg viewBox="0 0 18 12" aria-hidden="true" className="ticks">
+      <path d="M1 6.5l3 3L10 2.5M7 9.5l1 1 6.5-8" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function MethodIcon({ id }: { id: string }) {
   const p = { fill: "none", stroke: "currentColor", strokeWidth: 1.8, strokeLinecap: "round", strokeLinejoin: "round" } as const;
   return (

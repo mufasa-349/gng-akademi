@@ -1,15 +1,17 @@
 import { HeroHex } from "@/components/HeroHex";
 import { HorizontalTrack } from "@/components/HorizontalTrack";
-import { MethodIcon, SocialIcon } from "@/components/Icons";
+import { ChatTicks, MethodIcon, SocialIcon } from "@/components/Icons";
 import { LitWords } from "@/components/LitWords";
 import { Logo, LogoMark } from "@/components/Logo";
 import { Tilt } from "@/components/Tilt";
 import { VideoFeature } from "@/components/VideoFeature";
 import { asset } from "@/lib/asset";
-import { contact, exams, faq, featuredVideo, manifesto, method, platform, socials, topics } from "@/lib/data";
+import { contact, exams, faq, featuredVideo, manifesto, method, platform, reviews, socials, topics } from "@/lib/data";
 
 export default function Home() {
   const half = Math.ceil(topics.length / 2);
+  const rhalf = Math.ceil(reviews.length / 2);
+  const feedbackLink = `https://wa.me/905378734444?text=${encodeURIComponent("Merhaba, GNG Akademi hakkındaki yorumum:")}`;
   return (
     <>
       <HeroHex />
@@ -107,6 +109,50 @@ export default function Home() {
         <div className="wrap channel reveal">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={asset("/images/banner.png")} alt="GNG Akademi YouTube kanal kapağı" loading="lazy" />
+        </div>
+      </section>
+
+      {/* Veli / öğrenci geri dönüşleri */}
+      <section className="reviews" id="yorumlar">
+        <div className="wrap reviews-head">
+          <div className="sec-head">
+            <p className="eyebrow reveal">Memnuniyet</p>
+            <h2 className="reveal reveal-d1">
+              Veliler ve öğrenciler <span className="grad">ne diyor?</span>
+            </h2>
+            <p className="sec-lead reveal reveal-d2">Derslerden sonra velilerden ve öğrencilerden gelen mesajlardan bazıları.</p>
+          </div>
+          <a className="btn btn--ghost reveal reveal-d2" href={feedbackLink} target="_blank" rel="noreferrer">
+            <SocialIcon id="whatsapp" /> Yorumunu gönder
+          </a>
+        </div>
+        <div className="reviews-rows">
+          {[reviews.slice(0, rhalf), reviews.slice(rhalf)].map((row, i) => (
+            <div key={i} className={`reviews-row ${i ? "reviews-row--rev" : ""}`}>
+              <div className="reviews-track">
+                {[...row, ...row].map((r, j) => (
+                  <figure key={j} className={`bubble ${r.type === "Veli" ? "bubble--veli" : ""}`} aria-hidden={j >= row.length || undefined}>
+                    <figcaption>
+                      <span className="bubble-av">{r.name.charAt(0)}</span>
+                      <span>
+                        <b>{r.name}</b>
+                        <small>
+                          {r.type} · {r.exam}
+                        </small>
+                      </span>
+                    </figcaption>
+                    <blockquote>“{r.text}”</blockquote>
+                    <span className="bubble-meta">
+                      {r.result && <em className="bubble-result">{r.result}</em>}
+                      <span>
+                        <ChatTicks />
+                      </span>
+                    </span>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
